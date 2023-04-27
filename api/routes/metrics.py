@@ -1,0 +1,3 @@
+class MetricsAPI:
+    def metrics(model):
+        ...

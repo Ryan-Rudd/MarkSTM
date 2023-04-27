@@ -1,0 +1,3 @@
+class BacktestAPI:
+    def backtest(ticker):
+        ...

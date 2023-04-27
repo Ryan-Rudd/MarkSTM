@@ -1,0 +1,3 @@
+class statusAPI:
+    def predict():
+        ...

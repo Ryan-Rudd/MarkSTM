@@ -1,0 +1,3 @@
+class trainAPI:
+    def train( label: str, **features):
+        ...

@@ -1,3 +1,3 @@
 class stopAPI:
-    def stop( label: list, **features):
+    def stop():
         ...

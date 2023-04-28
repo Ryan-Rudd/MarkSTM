@@ -1,0 +1,5 @@
+
+*.pyc
+*.pyc
+api/__pycache__/__api_init__.cpython-311.pyc
+api/routes/__pycache__/backtest.cpython-311.pyc

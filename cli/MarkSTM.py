@@ -26,10 +26,15 @@ questions = [
     inquirer.Text(
     'ticker',
     message="What stock would you like to auto-trade?",
+    ),
+    inquirer.List(
+    'edit_settings',
+    message="Would you like to view/edit your current settings?",
+    choices=["Yes", "No"]
     )
 ]
 
 res = inquirer.prompt(questions)
 
 # Print a message to let the user know what they selected, in green
-print(colored(f"Trading {res['ticker']} using the {res['model']} model", "green"))
+print(colored(f"Trading {str(res['ticker']).upper()} using the {res['model']} model", "green"))

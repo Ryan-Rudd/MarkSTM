@@ -2,8 +2,13 @@ import requests
 import json
 import datetime
 from textblob import TextBlob
+import sys 
+from dotenv import *
 
 def get_stock_sentiment(ticker):
+
+    config = dotenv_values('../../../quanta_config.env')[0]
+    print(config)
     # Get information about the stock from an API
     try:
         response = requests.get(f"https://financialmodelingprep.com/api/v3/company/profile/{ticker}")
@@ -19,7 +24,7 @@ def get_stock_sentiment(ticker):
     # Get news articles about the stock from an API
     today = datetime.datetime.today().strftime('%Y-%m-%d')
     try:
-        response = requests.get(f"https://newsapi.org/v2/everything?q={ticker}&from={today}&sortBy=publishedAt&apiKey=75bf2b3353204ed4aca5d965bcc35bbe")
+        response = requests.get(f"https://newsapi.org/v2/everything?q={ticker}&from={today}&sortBy=publishedAt&apiKey={NEWS_API_KEY}")
         response.raise_for_status()
         news_articles = json.loads(response.text)["articles"]
     except requests.exceptions.HTTPError as http_err:
@@ -50,3 +55,6 @@ def get_stock_sentiment(ticker):
         return 2  # Sell
     else:
         return 3  # Neutral
+
+
+get_stock_sentiment('tsla')

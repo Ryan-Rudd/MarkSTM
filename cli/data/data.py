@@ -1,0 +1,3 @@
+class MarkSTMdata:
+    MODELS = [ "QUANTA" ]
+    

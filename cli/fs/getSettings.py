@@ -1,4 +1,5 @@
-from security.RH_CREDS_OBJ import RH_CRED
+import json
+from cred.RH_CREDS_OBJ import RH_CRED
 import platform
 import inquirer
 import os

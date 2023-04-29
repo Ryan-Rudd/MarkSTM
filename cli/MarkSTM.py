@@ -37,4 +37,7 @@ questions = [
 res = inquirer.prompt(questions)
 
 # Print a message to let the user know what they selected, in green
-print(colored(f"Trading {str(res['ticker']).upper()} using the {res['model']} model", "green"))
+if str(res['edit_settings']) == "Yes":
+    print("EDITING SETTINGS")
+else:
+    print(colored(f"Trading {str(res['ticker']).upper()} using the {res['model']} model", "green"))
